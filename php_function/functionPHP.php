@@ -39,9 +39,33 @@ function data_type_definition($value)
 }
 
 
+function reed_b($string)
+{
+  if(is_string($string) == 1){
+    $arr_string = str_split($string);
+    $i = 0;
+    foreach ($arr_string as $key => $value) {
+      if($value == 'b'){
+         $i++;
+      }
+      
+    }
+   return $i;
+
+  } else {
+       return false;  
+  }
+
+
+}
+
+
+function count_sum_var_in_array($arr)
+{
 
 
 
+}
 
 
 function inscribing_squares($a, $b)

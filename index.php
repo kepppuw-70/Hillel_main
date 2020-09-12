@@ -17,14 +17,6 @@
   include 'php_function/functionPHP.php'; 
 ?>
 
-<?php
-  $numberIsInt = is_int($_POST["number"]);
-  if($numberIsInt) { 
-    //Do something
-  } else {
-    //Return error or do something else
-  }
-?>
 
 
 <h3>Создать функцию определяющую какой тип данных ей передан и выводящей соответствующее сообщение, если данные не переданы то вывести соответствующее сообщение.</h3>
@@ -85,12 +77,90 @@ echo '<br>';
 
 <h3>Создать функцию которая считает все буквы b в переданной строке, в случае если передается не строка функция должна возвращать false</h3>
 
-не успел
+<?php
+
+echo 'Передаём строку - gnbvhjb fgfhbnbvbbf fgfbfdbfg'.'<br>';
+$string = 'gnbvhjb fgfhbnbvbbf fgfbfdbfg';
+echo 'Ответ: ';
+if (reed_b($string) != false) {
+    echo 'в строке - '.reed_b($string).'b';
+  } else {
+    echo 'Ошибка, передана не строка';
+  }
+
+echo '<br><br>';
+
+echo 'Передаём целое число - 123'.'<br>';
+$string = 123;
+echo 'Ответ: ';
+if (reed_b($string) != false) {
+    echo 'в строке - '.reed_b($string).'b';
+  } else {
+    echo 'ошибка, передана не строка';
+  }
+
+  
+    
+?>
+
+
 
 <h3>Создать функцию которая считает сумму значений всех элементов массива произвольной глубины</h3>
 
+
+
+
+
+
+<?php
+
+/*
+$firstArr = [
+  'one' => 1,
+  'two' => [
+    'one' => 1,
+    'seven' => 22,
+    'three' => 32,
+  ],
+  'three' => [
+    'one' => 1,
+    'two' => 2,
+  ],
+  'foure' => 5,
+  'five' => [
+    'three' => 32,
+    'foure' => 5,
+    'five' => 12,
+  ],  
+];
+
+var_export($firstArr);
+echo '<br><br>';
+$firstArr_num_key = array_values($firstArr);
+var_export($firstArr_num_key);
+
+
+
+
+
+$sum = 0;
+while ( <= 10) {
+  foreach ($firstArr as $key => $value) {
+     if (!is_array($firstArr[$key])) {
+         $sum = $sum + $value;
+     } 
+     if (is_array($firstArr[$key])) {
+        $sum = $sum + $value;
+     }
+  }
+}
+
+echo 'Ответ: сумму всех значений в массиве - '.$sum.'<br>';
+*/
+?>
+
 <br>
-не успел
+
 <h3>Создать функцию которая определит сколько квадратов меньшего размера можно вписать в квадрат большего размера размер возвращать в float</h3>
 
 <form action="index.php" method="POST">
@@ -109,62 +179,6 @@ $b = trim($_POST['b']);
 inscribing_squares($a, $b);
 
 ?>
-
-
-
-
-
-
-
-
-
-
-<!--
-<form action="index.php" method="POST">
-
-Введите переменную:<input type="text" name="var">
-
-<br>
-<input type="submit" value="Ввести">
-</form>
--->
-<?php 
-/*
-$var = $_POST["var"];
-$var_pieces = explode(" ", $var);
-echo 'var - '.($var + 1).'<br>';
-  if(is_int($var/1) == 1 && $var != 'true' && $var != 'false'  && $var + 1 != '1' || $var == 0) { 
-    $x =  'целое число';
-  } 
-  if(is_double($var/1) == 1) { 
-    $x =  'числа с плавающей точкой';
-  }
-  if($var == 'true' || $var == 'false' || $var == 'TRUE' || $var == 'FALSE') { 
-    $x =  'булев';
-  }
-  
-  if($var_pieces[0] == 'new') { 
-    $x =  'обьект';
-  }
-  $var_null = $var.'1';
-  if(($var_null) == '1' && $var != 0) { 
-    $x =  'NULL';
-  }
-  
-echo 'Введено - '.$x;
-*/
-
-?>
-
-
-
-
-
-
-
-
-
-
 
 
   </body>
