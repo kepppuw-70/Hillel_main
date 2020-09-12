@@ -7,11 +7,6 @@
    
   </head>
   <body>
- 
-
-
-
-
 
 <?php
   include 'php_function/functionPHP.php'; 
@@ -20,9 +15,6 @@
 
 
 <h3>Создать функцию определяющую какой тип данных ей передан и выводящей соответствующее сообщение, если данные не переданы то вывести соответствующее сообщение.</h3>
-
-
-
 
 <?php
 echo 'Вводим - 1'.'<br>';
@@ -156,52 +148,6 @@ echo 'сумма всех значений массива - '.count_sum_var_in_a
 echo '<br><br>';
 
 
-
-
-
-/*
-$firstArr = [
-  'one' => 1,
-  'two' => [
-    'one' => 1,
-    'seven' => 22,
-    'three' => 32,
-  ],
-  'three' => [
-    'one' => 1,
-    'two' => 2,
-  ],
-  'foure' => 5,
-  'five' => [
-    'three' => 32,
-    'foure' => 5,
-    'five' => 12,
-  ],  
-];
-
-var_export($firstArr);
-echo '<br><br>';
-$firstArr_num_key = array_values($firstArr);
-var_export($firstArr_num_key);
-
-
-
-
-
-$sum = 0;
-while ( <= 10) {
-  foreach ($firstArr as $key => $value) {
-     if (!is_array($firstArr[$key])) {
-         $sum = $sum + $value;
-     } 
-     if (is_array($firstArr[$key])) {
-        $sum = $sum + $value;
-     }
-  }
-}
-
-echo 'Ответ: сумму всех значений в массиве - '.$sum.'<br>';
-*/
 ?>
 
 <br>
