@@ -2,111 +2,105 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Домашнее задание № 4 - главная</title>
+    <title>Домашнее задание № 5 - главная</title>
    <link rel="stylesheet" type="text/css" href="css/style2.css">
    
   </head>
   <body>
- 
+
+<?php
+  include 'php_function/functionPHP.php'; 
+?>
+
+
+
+<h3>Создать функцию определяющую какой тип данных ей передан и выводящей соответствующее сообщение, если данные не переданы то вывести соответствующее сообщение.</h3>
+
+<?php
+echo 'Вводим - 1'.'<br>';
+$var = 1;
+data_type_definition($var);
+echo '<br>';
+
+echo 'Вводим - массив'.'<br>';
+$var = [23, 57, 23, 67];
+data_type_definition($var);
+echo '<br>';
+
+echo 'Вводим - 1.1'.'<br>';
+$var = 1.1;
+data_type_definition($var);
+echo '<br>';
+
+echo 'Вводим - true'.'<br>';
+$var = true;
+data_type_definition($var);
+echo '<br>';
+
+echo 'Вводим - qqqdfdgg'.'<br>';
+$var = 'qqqdfdgg';
+data_type_definition($var);
+echo '<br>';
+
+echo 'Вводим - Обьект new stdClass'.'<br>';
+$var = new stdClass;
+data_type_definition($var);
+echo '<br>';
+
+echo 'Передаём - NULL'.'<br>';
+$var = NULL;
+data_type_definition($var);
+echo '<br>';
+
+echo 'Передаём - fopen("index.php", "r")'.'<br>';
+$var = fopen("index.php", 'r');
+data_type_definition($var);
+echo '<br>';
+
+echo 'Не передаём переменнкю'.'<br>';
+unset ($var);
+data_type_definition($var);
+echo '<br>';
+echo '<br>';
+/**/
+
+
+?>
+<br>
+
+<h3>Создать функцию которая считает все буквы b в переданной строке, в случае если передается не строка функция должна возвращать false</h3>
 
 <?php
 
-echo '<h1>Домашнее задание № 4.</h1>';
-
-
-echo '<h3>$arr = [1, 2, 3, 7, 31, 4, 1, 8, 6];</h3>';
-
-echo '<h3>посчитать длину массива</h3>';
-$arr = [1, 2, 3, 7, 31, 4, 1, 8, 6];
-$arr_for_sum = $arr;
-$num_arr = count($arr);
-echo 'Ответ: длина массива $arr = '.$num_arr.'<br>';
-
-
-echo '<h3>переместить первые 4 элемента массива в конец массива</h3>';
-$k = 0;
-for ($i=4; $i < $num_arr; $i++) { 
-  $arr_shift[$k] = $arr[$i];
-  $k++;
-}
-for ($i=0; $i < 4; $i++) { 
-  $arr_shift[$k] = $arr[$i];
-  $k++;
-}
-$arr = $arr_shift;
-echo 'Ответ: массив после перемещения 4 элементов в конец - ';
-var_export($arr);
-
-
-echo '<h3>получить сумму 4,5,6 элемента</h3>';
-$sum456_arr = $arr_for_sum[3] + $arr_for_sum[4] + $arr_for_sum[5];
-echo 'Ответ: сумма 4,5,6 элемента исходного массива = '.$sum456_arr.'<br>';
-$sum456_arr_shift = $arr_shift[3] + $arr_shift[4] +$arr_shift[5];
-echo 'Ответ: сумма 4,5,6 элемента массива после перемещения = '.$sum456_arr_shift.'<br>';
-
-
-
+echo 'Передаём строку - gnbvhjb fgfhbnbvbbf fgfbfdbfg'.'<br>';
+$string = 'gnbvhjb fgfhbnbvbbf fgfbfdbfg';
+echo 'Ответ: ';
+if (reed_b($string) != false) {
+    echo 'в строке - '.reed_b($string).'b';
+  } else {
+    echo 'Ошибка, передана не строка';
+  }
 
 echo '<br><br>';
-echo '<h3>$firstArr = [
-          <p>'."'".'one'."'".' => 1,'.'</p>
-          <p>'."'".'two'."'".' => 2,'.'</p>
-          <p>'."'".'three'."'".' => 3,'.'</p>
-          <p>'."'".'foure'."'".' => 5,'.'</p>
-          <p>'."'".'five'."'".' => 12,'.'</p>
-      ];
-      </h3>';
 
-echo '<h3>$secondArr = [
-          <p>'."'".'one'."'".' => 1,'.'</p>
-          <p>'."'".'seven'."'".' => 22,'.'</p>
-          <p>'."'".'three'."'".' => 32,'.'</p>
-          <p>'."'".'foure'."'".' => 5,'.'</p>
-          <p>'."'".'five'."'".' => 13,'.'</p>
-          <p>'."'".'six'."'".' => 37,'.'</p>
-      ];
-      </h3>';
-
-$firstArr = [
-  'one' => 1,
-  'two' => 2,
-  'three' => 3,
-  'foure' => 5,
-  'five' => 12,
-];
-
-$secondArr = [
-  'one' => 1,
-  'seven' => 22,
-  'three' => 32,
-  'foure' => 5,
-  'five' => 13,
-  'six' => 37,
-];
-
-echo '<h3>найти все элементы которые отсутствуют в первом массиве и присутствуют во втором</h3>';
-$arr_diff21 = array_diff($secondArr, $firstArr);
-echo 'Ответ: элементы которые отсутствуют в первом массиве и присутствуют во втором - ';
-var_export($arr_diff21);
-
-echo '<h3>найти все элементы которые присутствую в первом и отсутствуют во втором</h3>';
-$arr_diff12 = array_diff($firstArr, $secondArr);
-echo 'Ответ: элементы которые присутствую в первом и отсутствуют во втором - ';
-var_export($arr_diff12);
+echo 'Передаём целое число - 123'.'<br>';
+$string = 123;
+echo 'Ответ: ';
+if (reed_b($string) != false) {
+    echo 'в строке - '.reed_b($string).'b';
+  } else {
+    echo 'ошибка, передана не строка';
+  }
+  
+?>
 
 
-echo '<h3>найти все элементы значения которых совпадают</h3>';
-$arr_intersect = array_intersect($firstArr, $secondArr);
-echo 'Ответ: элементы значения которых совпадают - ';
-var_export($arr_intersect);
 
-echo '<h3>найти все элементы значения которых отличается</h3>';
-$arr_diff = $arr_diff12 + $arr_diff21;
-echo 'Ответ: элементы значения которых отличается - ';
-var_export($arr_diff);
+<h3>Создать функцию которая считает сумму значений всех элементов массива произвольной глубины</h3>
 
+<?php
 
-echo '<br><br>';
+echo 'Создаём массив:<br>';
 echo '<h3>$firstArr = [
           <p>'."'".'one'."'".' => 1,'.'</p>
           <p>'."'".'two'."'".' => ['.'</p>
@@ -127,7 +121,7 @@ echo '<h3>$firstArr = [
       ];
       </h3>';
 
-$firstArr = [
+$arr = [
   'one' => 1,
   'two' => [
     'one' => 1,
@@ -147,50 +141,37 @@ $firstArr = [
 ];
 
 
-echo '<h3>получить все вторые элементы вложенных массивов</h3>';
+echo 'Ответ: ';
 
-foreach ($firstArr as $key => $value) {
-     if (is_array($firstArr[$key])) {
-        $arr = array_values($firstArr[$key]);
-        echo 'Ответ: Подмассив '.$key.' Массива $firstArr, значение второго элемента - '.$arr[1].'<br>';
-     }
-}
-
-
-echo '<h3>получить общее количество элементов в массиве</h3>';
-/* Не верно
-$num = 0;
-foreach ($firstArr as $key => $value) {
-  if (!is_array($firstArr[$key])) {
-        $num++;
-     } else {
-          $num = $num + count($firstArr[$key]);  
-     }
-  
-}
-*/
-$num = count($firstArr, COUNT_RECURSIVE);
-echo 'Ответ: общее количество элементов в массиве - '.$num.'<br>';
-
-
-
-
-echo '<h3>получить сумму всех значений в массиве</h3>';
-$sum = 0;
-foreach ($firstArr as $key => $value) {
-  if (!is_array($firstArr[$key])) {
-        $sum = $sum + $value;
-     } else {
-            foreach ($firstArr[$key] as $key1 => $value1) {
-                    $sum = $sum + $value1;
-            }
-      }
-  
-}
-echo 'Ответ: сумму всех значений в массиве - '.$sum.'<br>';
+echo 'сумма всех значений массива - '.count_sum_var_in_array($arr);
 
 echo '<br><br>';
+
+
 ?>
 
+<br>
+
+<h3>Создать функцию которая определит сколько квадратов меньшего размера можно вписать в квадрат большего размера размер возвращать в float</h3>
+
+<form action="index.php" method="POST">
+
+Введите длинну стороны первого квадрата:<input type="text" name="a" required>
+<br>
+Введите длинну стороны второго квадрата:<input type="text" name="b" required>
+<br>
+<input type="submit" value="Ввести">
+</form>
+<?php 
+
+$a = trim($_POST['a']);
+$b = trim($_POST['b']);
+
+inscribing_squares($a, $b);
+
+?>
+
+
   </body>
-</html>
+</html> 
+
