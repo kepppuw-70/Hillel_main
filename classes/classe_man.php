@@ -1,6 +1,6 @@
 <?php
 
-class Man {
+class OldMan {
 
     private $name;
     private $age;
@@ -24,6 +24,10 @@ class Man {
         return $this->age;
     }
 
+    public function Date_of_birthr ($age) {
+        $this->date_of_birth = 2020 - $age;
+        return $this->date_of_birth;
+    }
    
 }
 

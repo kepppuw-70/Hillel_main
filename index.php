@@ -9,7 +9,11 @@
   <body>
 <?php
    require_once( "classes/classe_man.php" );
-   
+   require_once( "classes/classe_young_man.php" );
+   require_once( "classes/classe_young_woman.php" );
+   require_once( "classes/classe_sick_man.php" );
+   require_once( "classes/abstr_classe.php" );
+   require_once( "classes/nasled_abstr_classe.php" );
 echo '<h1>Домашнее задание № 6.</h1>';   
 ?> 
 
@@ -20,10 +24,11 @@ echo '<h1>Домашнее задание № 6.</h1>';
 Каждое свойство должно иметь геттеры и сеттеры</h1><br>
 
 <?php
-$man = new Man();
-$man->setName("Homosapiens");
-$man->setAge("1000000");
-echo 'Ответ: ';print_r($man);
+$oldman = new OldMan();
+$oldman->setName("Oldman");
+$age = $oldman->setAge("75");
+$oldman->Date_of_birthr($age);
+echo 'Ответ: ';print_r($oldman);
 echo '<br><br>';
 ?>
 
@@ -41,8 +46,70 @@ echo '<br><br>';
 
 Один из наследников должен содержать абстрактную функцию возведения в степень</h1><br>
 
+<?php
+$youngman = new YoungMan();
+$youngman->setName("YoungMan");
+$age_ym = $youngman->setAge("35");
+$youngman->setDateOfBirthr("1985");
+$youngman->Older(75, $age_ym);
+echo 'Ответ: ';print_r($youngman);
+echo '<br><br>';
+$youngwoman = new YoungWoman();
+$youngwoman->allYears(75, 25);
+echo 'Ответ: ';print_r($youngwoman);
+echo '<br><br>';
+$sickman = new SickMan();
+$sickman->setDateofdeath("2015");
+$sickman->Average_life(75, 30);
+echo 'Ответ: ';print_r($sickman);
+echo '<br><br>';
 
 
+
+/*
+abstract class Matemat {
+
+   abstract function my_stepen();
+  
+}
+
+class Mastepen extends Matemat {
+ 
+    private $var;
+    private $stepen;
+
+    public function getVar() {
+        return $this->var;
+    }
+
+    public function setVar($var) {
+        $this->var = $var;
+        return $this->var;
+    }
+
+    public function getStepen() {
+        return $this->stepen;
+    }
+
+    public function setStepen($stepen) {
+        $this->stepen = $stepen;
+        return $this->stepen;
+    }
+
+    public function my_stepen() {
+        echo $this->stepen = $this->var**$this->stepen;
+    }
+}
+
+*/
+$mastepen = new Mastepen();
+$mastepen->setVar(2);
+$mastepen->setStepen(3);
+$mastepen->my_stepen();
+echo 'Ответ: ';print_r($mastepen);
+echo '<br><br>';
+
+?>
 
 
 
@@ -60,7 +127,7 @@ echo '<br><br>';
 
 В случае если реализован наследник класса содержащего абстрактную функцию то класс должен содержать реализацию абстракции.</h1><br>
 
-<br><br><br><br
+<br><br><br><br>
 
 
 
